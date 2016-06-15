@@ -34,6 +34,7 @@ class HasMany < Assoc
       :foreign_key => "#{self_class_name.underscore}_id".to_sym,
       :class_name => name.to_s.singularize.camelcase,
       :primary_key => :id
+
     }
 
     defaults.keys.each do |key|
@@ -75,6 +76,7 @@ module Associatable
   def assoc_options
 
     @assoc_options ||= {}
+    @random = false
     @assoc_options
   end
 end
